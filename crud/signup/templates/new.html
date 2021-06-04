@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block contents %}
+<body>
+    <div class = "container"></div>
+    <form action="{% url 'create' %}" method="POST">
+        {%csrf_token%}
+        이름: <input type="text" name="name">
+        <br>
+        <br>
+        나이: <input type="text" name="age">
+        <br>
+        <br>
+        이메일: <input type="text" name="email">
+        <br>
+        <br>
+        자기소개: <textarea name="introduce"></textarea>
+        <br>
+        <br>
+        <button type=submit>submit</button>
+    </form>
+</div>
+</body>
+{% endblock %}

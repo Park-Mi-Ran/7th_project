@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block contents %}
+<body>
+    <h1>{{detail.name}}의 정보</h1><br>
+    가입날짜: {{detail.pub_date}}<br>
+    나이: {{detail.age}}<br>
+    이메일: {{detail.email}}<br>
+    {{detail.introduce}}
+
+    <a href="{% url 'edit' detail.id%}">edit</a>
+    <a href="{% url 'delete' detail.id %}">삭제</a>
+</body>
+{% endblock %}

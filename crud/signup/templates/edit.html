@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block contents %}
+<body>
+    <div class = "container">
+    <form action="{% url 'update' member.id%}" method="post">
+        {%csrf_token%}
+        이름: <input type="text" name="name" value = "{{member.name}}">
+        <br>
+        <br>
+        나이: <input type="text" name="age" value = "{{member.age}}">
+        <br>
+        <br>
+        이메일: <input type="text" name="email" value = "{{member.email}}">
+        <br>
+        <br>
+        자기소개: <textarea name="introduce">{{member.introduce}}</textarea>
+        <br>
+        <br>
+        <button type=submit>submit</button>
+    </form>
+</div>
+</body>
+{% endblock %}}

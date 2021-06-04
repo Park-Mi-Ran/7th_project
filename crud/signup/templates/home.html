@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+<body>
+    {% block contents %}
+    <img src ="{% static '로제.jpg' %}" height="">
+    <br>
+    <a href="{% url 'new' %}">Write Your Information</a>
+    {% for member in signup %}<br>
+        {{member.name}}<br>
+        {{member.pub_date}}<br>
+        {{member.age}}<br>
+        {{member.email}}<br>
+        {{member.info_summary}}
+        <a href="{% url 'detail' member.id %}">더보기</a>
+    {% endfor %}
+    
+</body>
+{% endblock %}
